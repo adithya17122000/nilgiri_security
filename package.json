@@ -1,17 +1,22 @@
 {
-    "name": "create-nilgirisecurtiy",
-    "version": "1.0.2",
+    "name": "create-nilgirisecurity",
+    "version": "1.0.0",
+    "description": "CLI tool to create a performance testing project",
     "main": "index.js",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/adithya17122000/nilgiri_security.git"
+    "type": "module",
+    "bin": {
+        "nilgirisecurity": "index.js"
     },
     "scripts": {
-      "test": "echo 'Run tests here'",
-      "build": "echo 'Build your package here'"
+        "build": "tsc"
     },
-    "publishConfig": {
-      "registry": "https://registry.npmjs.org/"
-    }
-  }
-  
+    "dependencies": {
+        "inquirer": "^9.2.6"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "keywords": [],
+    "author": "Your Name",
+    "license": "MIT"
+}
