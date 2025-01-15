@@ -8,10 +8,13 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "rootDir": "./",
-    "types": ["node"]
+    "types": [
+      "node"
+    ]
   },
   "include": [
-    "*.ts"
+    "*.ts",
+    "templates/generateReport.ts"
   ],
   "exclude": [
     "node_modules"

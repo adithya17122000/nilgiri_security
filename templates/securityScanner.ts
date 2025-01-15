@@ -34,7 +34,7 @@
 // function parseJsonFile(filePath: string) {
 //     try {
 //         const fileContent = fs.readFileSync(filePath, 'utf8');
-        
+
 //         // Clean the JSON content
 //         const cleanedContent = fileContent
 //             .split('\n')
@@ -189,7 +189,7 @@
 //     // Generate HTML Report
 
 //     const htmlReport = generateHTML(scanData, aiAnalysis);
-    
+
 //     fs.writeFileSync(securityReportPath, htmlReport);
 //     console.log(`Security analysis report generated: ${securityReportPath}`);
 // }
@@ -208,7 +208,7 @@
 //         }
 
 //         const url = await question("Enter the URL of the website to scan: ");
-        
+
 //         if (!url.startsWith('http://') && !url.startsWith('https://')) {
 //             throw new Error('Invalid URL. Please include http:// or https://');
 //         }
@@ -251,7 +251,7 @@ import unzipper from 'unzipper';
 import * as readline from 'readline';
 import { OpenAI } from 'openai';
 import { platform } from 'os';
-import { generateHTML } from './generateReport';
+import { generateHTML } from './templates/generateReport';
 
 dotenv.config();
 
@@ -284,7 +284,7 @@ function parseJsonFile(filePath: string) {
         const fileContent = fs.readFileSync(filePath, 'utf8');
         const lines = fileContent.split('\n');
         const results = [];
-        
+
         for (const line of lines) {
             if (line.trim()) {
                 try {
@@ -365,7 +365,7 @@ async function downloadFeroxbuster(): Promise<string> {
     let downloadUrl: string;
     let filename: string;
 
-    switch(os) {
+    switch (os) {
         case 'win32':
             downloadUrl = 'https://github.com/epi052/feroxbuster/releases/latest/download/x86_64-windows-feroxbuster.exe.zip';
             filename = 'feroxbuster.exe';
@@ -433,9 +433,9 @@ function runFeroxbuster(url: string, wordlistPath: string, executablePath: strin
     try {
         console.log('Running Feroxbuster scan...');
         const command = `"${executablePath}" -u ${url} -w ${wordlistPath} --json -o feroxbuster_report.json --silent`;
-        
+
         console.log(`Executing command: ${command}`);
-        execSync(command, { 
+        execSync(command, {
             stdio: 'inherit',
             encoding: 'utf8'
         });
@@ -494,7 +494,7 @@ async function main() {
 
         const zipPath = await downloadFeroxbuster();
         const executablePath = await unzipFeroxbuster(zipPath);
-        
+
         runFeroxbuster(url, wordlistPath, executablePath);
 
         await generateReports();
