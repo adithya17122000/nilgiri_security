@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^20.0.0",
     "axios": "^1.6.0",
     "dotenv": "^16.0.0",
     "groq-sdk": "^0.3.0",
@@ -22,6 +21,7 @@
     "unzipper": "^0.10.0"
   },
   "devDependencies": {
+    "@types/node": "^22.10.7",
     "@types/unzipper": "^0.10.10",
     "ts-node-dev": "^2.0.0"
   }
