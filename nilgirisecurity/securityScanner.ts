@@ -251,7 +251,7 @@ import unzipper from 'unzipper';
 import * as readline from 'readline';
 import { OpenAI } from 'openai';
 import { platform } from 'os';
-import { generateHTML } from './templates/generateReport';
+import { generateHTML } from './generateReport';
 
 dotenv.config();
 

@@ -15,7 +15,7 @@
   "include": [
     "*.ts",
     "templates/generateReport.ts"
-  ],
+, "../generateReport.ts"  ],
   "exclude": [
     "node_modules"
   ]
